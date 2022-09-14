@@ -1,0 +1,22 @@
+.test {
+  font-size: 10px; }
+
+h1 {
+  color: #ccc; }
+
+h2 {
+  color: red; }
+
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.checkbox-width {
+  width: 400px; }
+
+.test2 {
+  font-size: 12px; }
+
+.test3 {
+  font-size: 14px; }

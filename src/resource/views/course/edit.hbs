@@ -1,0 +1,18 @@
+<h1 class="center"> Edit khoá học</h1>
+<form method="post" action="/course/{{course._id}}?_method=put">
+  <div class="form-group" >
+    <label for="name">Tên khoá học</label>
+    <input type="text" name="name" class="form-control" value ="{{course.name}}" id="name" placeholder="Enter name">
+  </div>
+  <div class="description">
+    <label for="search-input">Miêu tả khoá học</label>
+    <textarea  name="description" class="form-control" id="description" placeholder="Enter discript">{{course.description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="search-input">Ngày thêm vào</label>
+    <input type="text" name="videoId" class="form-control" value ="{{course.createdAt}}" id="videoId" placeholder="Enter id video">
+  </div>
+  <button type="submit" class="btn btn-primary">Sửa khoá học</button>
+</form>
+
+                        
