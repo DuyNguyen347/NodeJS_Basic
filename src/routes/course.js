@@ -2,6 +2,8 @@ const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 
+// viết tắt router = require('express').Router();
+
 const courseController = require('../app/controllers/courseController');
 router.get('/create',courseController.create);
 router.post('/handle-form-actions',courseController.handleForm)

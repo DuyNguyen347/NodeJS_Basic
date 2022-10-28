@@ -8,6 +8,7 @@ const route = require('./routes');
 const db = require('./confif/db');
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
+const middlewares = require('./app/middlewares/sort')  
 
 db.connect()
 
@@ -21,6 +22,9 @@ app.use(bodyParser.urlencoded({
     extended: true
   }))
 app.use(bodyParser.json())
+
+// middlewares
+app.use(middlewares)
 
 // Template engine
 app.engine(

@@ -18,7 +18,17 @@ class MeController {
         //     .catch(next);
 
         // xử lý bất đồng bộ cho 2 hàm Course.countDeleted(),Course.find({}) bẳng promise
-        Promise.all([Course.countDeleted(), Course.find({})])
+
+        // sort
+
+        let courseQuery = Course.find({});
+        if (req.query.hasOwnProperty('_sort')) {
+            courseQuery = courseQuery.sort({
+                [req.query.column]: req.query.type
+            })
+        };
+
+        Promise.all([Course.countDeleted(),courseQuery])
             // có thể thay result bẳng [deletedCount,course] : kiến thức destructuring 
             .then((result) => res.render('me/store-course', {
                 deletedCount: result[0],// deletedCount (cách dùng destructuring)
